@@ -1,0 +1,143 @@
+/* Основний стиль сторінки */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Заголовок сторінки */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4a90e2;
+    margin-bottom: 20px;
+}
+
+/* Контейнер для кожного завдання */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+    font-size: 2rem;
+    color: #4a90e2;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.todo-detail p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.todo-meta {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+.btn:hover {
+    background-color: #357ab8;
+}
+
+/* Кнопка для Delete */
+.btn.delete {
+    background-color: #ff6b6b;
+}
+
+.btn.delete:hover {
+    background-color: #e55a5a;
+}
+
+/* Вирівнювання тексту статусу */
+span {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #4a90e2;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Центрування кнопки "Back to Create new task" */
+a.btn[href="{% url 'index' %}"] {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 30px auto;
+    text-align: center;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .btn {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Центрування кнопки "Back to Create new task" */
+a.btn[href="{% url 'index' %}"] {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 30px auto;
+    text-align: center;
+}
+
+/* Контейнер для заголовка і кнопки */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4a90e2;
+    margin-bottom: 20px;
+}
+
+/* Центрування за допомогою Flexbox */
+.flex-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Кнопка */
+a.btn {
+    padding: 10px 15px;
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+a.btn:hover {
+    background-color: #357ab8;
+}

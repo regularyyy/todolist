@@ -1,0 +1,41 @@
+{% extends 'todo/layout.html' %}
+
+{% block title %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'todo/style2.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1>Tasks:</h1>
+<div class="flex-container">
+    <a class="btn" href="{% url 'index' %}">Back to Create new task</a>
+</div>
+
+
+{% for todo in todo_list %}
+    <div class="container">
+        <h1>{{ todo.title }}</h1>
+        <div class="todo-detail">
+            <p>{{ todo.description }}</p>
+            <p class="todo-meta">
+                <p>Due Date: {{ todo.due_date }} | Tag: {{ todo.tag }}</p>
+            </p>
+        </div>
+        {% if todo.is_complete == False %}
+        <span>Not completed</span>
+        <a class="btn" href="{% url 'update' todo_id=todo.id %}">Close</a>
+
+        {% else %}
+        <span>Complete</span>
+        <a class="btn" href="{% url 'update' todo_id=todo.id %}">Open</a>
+        {% endif %}
+
+        <a class="btn" href="{% url 'delete' todo_id=todo.id %}">Delete</a>
+
+    </div>
+    {% endfor %}
+</html>
+{% endblock %}

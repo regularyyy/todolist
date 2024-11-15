@@ -1,0 +1,32 @@
+{% extends 'todo/layout.html' %}
+
+{% block title %}
+<title>Tasker</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'todo/style1.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div style="font-family: sans-serif">
+
+    <h1>My task manager</h1>
+    <h3>Manage your time!</h3>
+
+    <form action="{% url 'add' %}" method="post" onsubmit="return validateForm()">
+        {% csrf_token %}
+
+        <div>
+            <label>New task:</label><br>
+            <input type="text" name="title" placeholder="Task name" pattern=".*[a-zA-Z].*" required><br>
+            <input type="text" name="tag" placeholder="Tag" pattern=".*[a-zA-Z].*" required><br>
+            <input type="text" name="description" placeholder="Description" pattern=".*[a-zA-Z].*" required><br>
+            <input type="date" name="due_date" min="{% now 'Y-m-d' %}" placeholder="Due Date" required>
+        </div>
+
+        <button type="submit">Save</button>
+    </form><br>
+
+    <a style='text-decoration: none' href="{% url 'tasks_page' %}">Tasks page</a><br>
+
+{% endblock %}
